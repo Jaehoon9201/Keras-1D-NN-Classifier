@@ -28,16 +28,13 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping
 #■■■■■■■■■■■■■■■ Classification Train ■■■■■■■■■■■■■■■■■
 #■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-# 전압 오차와 상태 레이블 불러오기
 df2 = pd.read_csv(r'.\data\train_freezed.csv')
 err_train = df2.values[:, :-1]
 status_train = df2.values[:, -1].astype(np.int64)
-# df2.iloc[:, 16:18] = 10*df2.iloc[:, 16:18]-
-# 전압 오차와 상태 레이블 불러오기
+
 df3 = pd.read_csv(r'.\data\test_freezed.csv')
 err_test = df3.values[:, :-1]
 status_test = df3.values[:, -1].astype(np.int64)
-# df3.iloc[:, 16:18] = 10*df3.iloc[:, 16:18]
 
 
 x_train = err_train         # 이걸 쓰면 z출력을 tanh 로 활성화해야함.
@@ -93,7 +90,6 @@ for i in range(len(var)):
     supervisedclassifier.summary()
 
 
-    #MODEL_SAVE_FOLDER_PATH = './model_as_lr/lr %.6f/' % (var[i])
     MODEL_SAVE_FOLDER_PATH = './model/replay %d th lr 0.00004 batch 300 dense 16/'  % i
     if not os.path.exists(MODEL_SAVE_FOLDER_PATH):
         os.mkdir(MODEL_SAVE_FOLDER_PATH)
