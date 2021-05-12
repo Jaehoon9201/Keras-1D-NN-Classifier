@@ -32,7 +32,7 @@ In addition, it monitors during learning through the code below and stops learni
 checkpoint = ModelCheckpoint(filepath=model_path, monitor='val_acc', verbose=1, save_best_only=True, mode='auto', period=1)
 earlystopping = EarlyStopping(monitor='val_acc', patience=50)
 ```
-## How the model is saved.
+## How the model is saved
 
 ![image](https://user-images.githubusercontent.com/71545160/117923585-40630c80-b32f-11eb-99fd-e6cc752835e2.png)
 
