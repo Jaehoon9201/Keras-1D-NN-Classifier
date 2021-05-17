@@ -42,4 +42,4 @@ earlystopping = EarlyStopping(monitor='val_acc', patience=50)
 
 ![image](https://user-images.githubusercontent.com/71545160/117923537-26292e80-b32f-11eb-9748-f14e4e1756fc.png)
 
-**Imbalance of each data should be modified**
+**Size of each data class imbalance should be modified**
